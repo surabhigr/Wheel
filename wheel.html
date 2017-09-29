@@ -2,167 +2,21 @@
 <html>
 
 <head>
-    <script src="CircleCanvasPapy.js"></script>
-    <style type "text/css">
-        <!--
-        /* @group Blink */
-        
-        .blink {
-            -webkit-animation: blink .75s linear infinite;
-            -moz-animation: blink .75s linear infinite;
-            -ms-animation: blink .75s linear infinite;
-            -o-animation: blink .75s linear infinite;
-            animation: blink .75s linear infinite;
-        }
-        
-        @-webkit-keyframes blink {
-            0% {
-                opacity: 1;
-            }
-            50% {
-                opacity: 1;
-            }
-            50.01% {
-                opacity: 0;
-            }
-            100% {
-                opacity: 0;
-            }
-        }
-        
-        @-moz-keyframes blink {
-            0% {
-                opacity: 1;
-            }
-            50% {
-                opacity: 1;
-            }
-            50.01% {
-                opacity: 0;
-            }
-            100% {
-                opacity: 0;
-            }
-        }
-        
-        @-ms-keyframes blink {
-            0% {
-                opacity: 1;
-            }
-            50% {
-                opacity: 1;
-            }
-            50.01% {
-                opacity: 0;
-            }
-            100% {
-                opacity: 0;
-            }
-        }
-        
-        @-o-keyframes blink {
-            0% {
-                opacity: 1;
-            }
-            50% {
-                opacity: 1;
-            }
-            50.01% {
-                opacity: 0;
-            }
-            100% {
-                opacity: 0;
-            }
-        }
-        
-        @keyframes blink {
-            0% {
-                opacity: 1;
-            }
-            50% {
-                opacity: 1;
-            }
-            50.01% {
-                opacity: 0;
-            }
-            100% {
-                opacity: 0;
-            }
-        }
-        /* @end */
-        
-        -->
-    </style>
-    <style>
-        body {
-            margin: 50px;
-            padding: 50px;
-        }
-        
-        #spinner {
-            position: relative;
-            top: 5px;
-            left: 5px;
-            /* background-color: red; */
-            max-width: 500px;
-            width: 500px;
-            height: 500px;
-            z-index: 0;
-        }
-        
-        #pointer {
-            position: absolute;
-            top: 160px;
-            right: 2px;
-            background-color: red;
-            z-index: -2;
-            font: 50px arial, sans-serif;
-            text-align: left;
-        }
-        
-        #piechart {
-            display: block;
-            margin: auto;
-            position: relative;
-            max-width: 400px;
-            z-index: -1;
-        }
-		
-		 #yelpform {
-            display: block;
-            margin: auto;
-            position: absolute;
-            top: 80px;
-			left: 60px;
-			align: center;
 
-        }
-        
-		#mannualLoad {
-            display: block;
-            margin: auto;
-            position: absolute;
-            top: 80px;
-			right: 50px;
-			align: center;
-
-        }
-		
-        #choice {
-            background-color: gray;
-            font: 50px arial, sans-serif;
-            text-align: center
-        }
-        
-        #spinit {
-            background-color: gray;
-            font: 50px arial, sans-serif;
-            text-align: center
-        }
-    </style>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="CircleCanvasPapy.js"></script>
+   <link href="main.css" rel="stylesheet" type="text/css"></style>
 </head>
 
 <body>
+
+
+
+<div class="debug">
+    <pre>
+<button class="fetch">Get Data from Yelp!</button>
+</pre>
+</div>
     <center>
         <div id="spinner">
             <canvas id="piechart" height="400" width="400"></canvas>
@@ -351,6 +205,9 @@ function WheelLoad(){
     <!--
 <button onclick="bgTurn('piechart');">Spin</button>
 -->
+
+
+
     </div>
 </body>
 
