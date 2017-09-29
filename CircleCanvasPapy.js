@@ -2,16 +2,16 @@ var data=new Array();
 var angle=0;
 /* Every data point should have a color */
 var colors = [
-"#F79F81",
-"#F5FBEF",
-"#F79F81",
-"#F5FBEF",
-"#F79F81",
-"#F5FBEF",
-"#F79F81",
-"#F5FBEF",
-"#F79F81",
-"#F5FBEF"
+	"#F79F81",
+	"#F5FBEF",
+	"#F79F81",
+	"#F5FBEF",
+	"#F79F81",
+	"#F5FBEF",
+	"#F79F81",
+	"#F5FBEF",
+	"#F79F81",
+	"#F5FBEF"
 ];
 /* Include global variables file */
 function initCircle() {
@@ -60,11 +60,11 @@ function initCircle() {
 function drawSegment(canvas, context, i) {
 	/* Save the Context */
     context.save();
-	
+
 	/* Find the center (x,y) coordinates of the canvas */
 	var centerX = Math.floor(canvas.width / 2);
 	var centerY = Math.floor(canvas.height / 2);
-	
+
 	/* Set the radius to 1/2 the length of the canvas width */
 	radius = Math.floor(canvas.width / 2);
 
@@ -79,16 +79,16 @@ function drawSegment(canvas, context, i) {
 
 	/* Start a path where we start drawing on the canvas */
 	context.beginPath();
-	
+
 	/* Move the path to the starting point */
 	context.moveTo(centerX, centerY);
-	
+
 	/* draw and arc */
 	context.arc(centerX, centerY, radius, startingAngle, endingAngle, false);
-	
+
 	/* Close the path */
 	context.closePath();
-	
+
 	/* and fill it with a color from the colors array */
 	context.fillStyle = colors[i];
 	context.fill();
@@ -135,7 +135,7 @@ function drawSegmentLabel(canvas, context, i) {
 	context.restore();
 }
 
-    
+
 /* Spin the circle */
 function bgTurn(element) {
 	MAX=780	// Maximum number of turns
@@ -157,10 +157,10 @@ function bgTurn(element) {
 	var l=0;
 	// Set interval at TIMEOUT milliseconds
 	var id = setInterval(frame, TIMEOUT);
-	
+
 	// Function to do the spinning
 	function frame() {
-	
+
 
 	// The turns are between i and MAX
 		if((j++)==i){
@@ -172,10 +172,10 @@ function bgTurn(element) {
 		var func="rotate("+(start)+"deg)";
 
 			// Code for Safari
-			document.getElementById(element).style.WebkitTransform = func; 
+			document.getElementById(element).style.WebkitTransform = func;
 
 			// Code for IE9
-			document.getElementById(element).style.msTransform = func; 
+			document.getElementById(element).style.msTransform = func;
 
 			// Standard syntax
 			document.getElementById(element).style.transform = func;
@@ -193,7 +193,7 @@ function bgTurn(element) {
 			}
 
 		}
-		
+
 		//if (z == (data.length -1)){
 		//		audio.pause()
 		//		audio.currentTime =0;
@@ -206,39 +206,36 @@ function bgTurn(element) {
 
 
 
-
+// Get details based on latitude (decimal), longitude (decimal)
 $(document).ready(function(){
-    $(".fetch").click(function(){
-     
+    $(".fetch-by-current-location").click(function(){
+
      var term = "pizza";
-    
+
     // CA Lat/Long
-    var latitude =  '37.786882';    
+    var latitude =  '37.786882';
   	var longitude =  '-122.399972';
-    
+
     // Detect User's current location
     if (navigator.geolocation) {
         navigator.geolocation.getCurrentPosition(showPosition);
     } else {
         alert("Geolocation is not supported by this browser.");
-    } 
-    
+    }
+
 
  var _flag = 0;
 
    // Show Position and make AJAX request to API Proxy
 function showPosition(position) {
     latitude = position.coords.latitude;
-    longitude = position.coords.longitude; 
+    longitude = position.coords.longitude;
     var api_url = 'https://surabhi.0x10.info/yelp.php?url=' + encodeURIComponent("https://api.yelp.com/v3/businesses/search?term=" + term + "&latitude=" + latitude + "&longitude=" + longitude);
-     
-    if(_flag == 1) 
+
+    if(_flag == 1)
     	return;
     else
     	_flag = 1;
-
-
-// alert(api_url);
 
          $.ajax({
                   beforeSend: function(request) {
@@ -247,24 +244,73 @@ function showPosition(position) {
                   dataType: "json",
                   url: api_url,
                   success: function(data) {
-                      //Your code 
+                      //Your code
                       // alert(JSON.stringify(data));
                       // console.log(JSON.stringify(data));
                       // alert(data.total);
                       var p = data.businesses;
-						for (var key in p) {
-							if (p.hasOwnProperty(key)) {
-								console.log(key + " -> " + p[key].name);
-								
-								if(key<10)
-									$("#tb" + key).val(p[key].name);
+											for (var key in p) {
+												if (p.hasOwnProperty(key)) {
+													console.log(key + " -> " + p[key].name);
+													if(key<10)
+														$("#tb" + key).val(p[key].name);
 
-							}
-						}
-						Load2();
+												}
+											}
+											// AutoLoad Wheel
+											Load2();
                   }
               });
-		}  
+						}
     });
-}); 
+});
 
+
+
+
+// Fetch details based on term (str), location (str), radius (int)
+$(document).ready(function(){
+    $(".fetch-by-address").click(function(){
+
+
+		var location = $("#address").val();
+		var term 		= $("#term").val();
+		var radius	= $("#radius").val();
+		var _flag = 0;
+
+		if(radius == "") radius = 5;
+		if(term == "") term = "restaurant";
+		if(location == "") location = "Columbus, Indianapolis";
+
+    var api_url = 'https://surabhi.0x10.info/yelp.php?url=' + encodeURIComponent("https://api.yelp.com/v3/businesses/search?term=" + term + "&location=" + location + "&radius=" + radius);
+
+    if(_flag == 1)
+    	return;
+    else
+    	_flag = 1;
+
+         $.ajax({
+                  beforeSend: function(request) {
+                      request.setRequestHeader("Authorization", "Bearer dummy");
+                  },
+                  dataType: "json",
+                  url: api_url,
+                  success: function(data) {
+                      //Your code
+                      // alert(JSON.stringify(data));
+                      // console.log(JSON.stringify(data));
+                      // alert(data.total);
+                      var p = data.businesses;
+											for (var key in p) {
+												if (p.hasOwnProperty(key)) {
+													console.log(key + " -> " + p[key].name);
+													if(key<10)
+														$("#tb" + key).val(p[key].name);
+												}
+											}
+											// AutoLoad Wheel
+											Load2();
+                  }
+        });
+    });
+});

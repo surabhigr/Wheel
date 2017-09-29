@@ -1,7 +1,15 @@
+body{
+  background: url(https://www.toptal.com/designers/subtlepatterns/patterns/doodles.png);
+  font-family: Verdana;
+  background-attachment:fixed;
+  background-position:center
+}
+
+
 
         <!--
         /* @group Blink */
-        
+
         .blink {
             -webkit-animation: blink .75s linear infinite;
             -moz-animation: blink .75s linear infinite;
@@ -9,7 +17,7 @@
             -o-animation: blink .75s linear infinite;
             animation: blink .75s linear infinite;
         }
-        
+
         @-webkit-keyframes blink {
             0% {
                 opacity: 1;
@@ -24,7 +32,7 @@
                 opacity: 0;
             }
         }
-        
+
         @-moz-keyframes blink {
             0% {
                 opacity: 1;
@@ -39,7 +47,7 @@
                 opacity: 0;
             }
         }
-        
+
         @-ms-keyframes blink {
             0% {
                 opacity: 1;
@@ -54,7 +62,7 @@
                 opacity: 0;
             }
         }
-        
+
         @-o-keyframes blink {
             0% {
                 opacity: 1;
@@ -69,7 +77,7 @@
                 opacity: 0;
             }
         }
-        
+
         @keyframes blink {
             0% {
                 opacity: 1;
@@ -85,15 +93,15 @@
             }
         }
         /* @end */
-        
-        --> 
+
+        -->
 
 
         body {
             margin: 50px;
             padding: 50px;
         }
-        
+
         #spinner {
             position: relative;
             top: 5px;
@@ -104,7 +112,7 @@
             height: 500px;
             z-index: 0;
         }
-        
+
         #pointer {
             position: absolute;
             top: 160px;
@@ -114,7 +122,7 @@
             font: 50px arial, sans-serif;
             text-align: left;
         }
-        
+
         #piechart {
             display: block;
             margin: auto;
@@ -122,45 +130,57 @@
             max-width: 400px;
             z-index: -1;
         }
-		
+
 		 #yelpform {
             display: block;
             margin: auto;
             position: absolute;
             top: 80px;
-			left: 60px;
-			align: center;
+            left: 60px;
+            align: center;
 
-    border: 1px solid gray;
-    border-radius: 10px;
-    padding: 10px 10px 10px 10px;
-    background: rgba(128, 128, 128, 0.27);
-
+            border: 1px solid gray;
+            border-radius: 10px;
+            padding: 10px 10px 10px 10px;
+            background: rgba(27, 26, 26, 0.22);
 
         }
-        
+
 		#mannualLoad {
-            display: block;
-            margin: auto;
-            position: absolute;
-            top: 80px;
-			right: 50px;
-			align: center;
-
+          display: block;
+          margin: auto;
+          position: absolute;
+          top: 80px;
+          right: 50px;
+          align: center;
+          border: 1px solid gray;
+          border-radius: 10px;
+          padding: 10px 10px 10px 10px;
+          background: rgba(27, 26, 26, 0.22);
         }
-		
+
         #choice {
-            background-color: gray;
+            background-color: rgba(128, 128, 128, 0.61) !important;
             font: 50px arial, sans-serif;
-            text-align: center
-        }
-        
-        #spinit {
-            background-color: gray;
-            font: 50px arial, sans-serif;
-            text-align: center
+            text-align: center;
+            margin-top: 20px;
         }
 
+        #spinit {
+            background-color: rgba(128, 128, 128, 0.61) !important;
+            font: 50px arial, sans-serif;
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        #demo {
+          background: #ececec;
+          margin: 5px;
+          padding: 10px;
+          line-height: 10px;
+          margin-top: 40px;
+          visibility: hidden;
+        }
 
 
 .debug{
@@ -177,4 +197,63 @@
 	font-family: Verdana;
 }
 
+input{
+  width: 90%;
+}
 
+
+/* Animation */
+@import url(https://fonts.googleapis.com/css?family=Montserrat);
+
+.title{
+  position: relative;
+  text-align: center;
+  top: 0;
+  margin-top: -116px;
+}
+svg {
+    display: block;
+    font: 12.5em 'Montserrat';
+    font-weight: bold;
+    width: 960px;
+    height: 130px;
+    margin: 0 auto;
+}
+
+.text-copy {
+    fill: none;
+    stroke: white;
+    stroke-dasharray: 6% 29%;
+    stroke-width: 5px;
+    stroke-dashoffset: 0%;
+    animation: stroke-offset 5.5s infinite linear;
+}
+
+.text-copy:nth-child(1){
+	stroke: black;
+	animation-delay: -1;
+}
+
+.text-copy:nth-child(2){
+	stroke: white;
+	animation-delay: -2s;
+}
+
+.text-copy:nth-child(3){
+	stroke: red;
+	animation-delay: -3s;
+}
+
+.text-copy:nth-child(4){
+	stroke: #a00505;
+	animation-delay: -4s;
+}
+
+.text-copy:nth-child(5){
+	stroke: red;
+	animation-delay: -5s;
+}
+
+@keyframes stroke-offset{
+	100% {stroke-dashoffset: -35%;}
+}
