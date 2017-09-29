@@ -95,9 +95,10 @@ export default StyleSheet.create({
     },
     "choice": {
         "backgroundColor": "rgba(128, 128, 128, 0.61) !important",
-        "font": "50px arial, sans-serif",
+        "font": "50px Montserrat, sans-serif",
         "textAlign": "center",
-        "marginTop": 20
+        "marginTop": 20,
+        "borderRadius": 10
     },
     "spinit": {
         "backgroundColor": "rgba(128, 128, 128, 0.61) !important",
@@ -181,5 +182,39 @@ export default StyleSheet.create({
     "text-copy:nth-child(5)": {
         "stroke": "red",
         "animationDelay": "-5s"
+    },
+    "locationField": {
+        "position": "relative",
+        "width": 480,
+        "height": 20,
+        "marginBottom": 2
+    },
+    "controls": {
+        "position": "relative",
+        "width": 480
+    },
+    "label": {
+        "textAlign": "right",
+        "fontWeight": "bold",
+        "width": 100,
+        "color": "#303030"
+    },
+    "address": {
+        "border": "1px solid #000090",
+        "backgroundColor": "#f0f0ff",
+        "width": 480,
+        "paddingRight": 2
+    },
+    "address td": {
+        "fontSize": "10pt"
+    },
+    "field": {
+        "width": "99%"
+    },
+    "slimField": {
+        "width": 80
+    },
+    "wideField": {
+        "width": 200
     }
 });
