@@ -12,28 +12,42 @@
 
 
 
-<div class="debug">
-    <pre>
-<button class="fetch">Get Data from Yelp!</button>
-</pre>
-</div>
+
     <center>
+
+<div class="title">
+  <svg viewBox="0 0 1500 300">
+	<symbol id="s-text">
+		<text text-anchor="middle" x="50%" y="80%">Spinning Wheel</text>
+	</symbol>
+
+	<g class = "g-ants">
+		<use xlink:href="#s-text" class="text-copy"></use>
+		<use xlink:href="#s-text" class="text-copy"></use>
+		<use xlink:href="#s-text" class="text-copy"></use>
+		<use xlink:href="#s-text" class="text-copy"></use>
+		<use xlink:href="#s-text" class="text-copy"></use>
+	</g>
+</svg>
+</div>
+
+
         <div id="spinner">
             <canvas id="piechart" height="400" width="400"></canvas>
             <script text="application/javascript" src="CircleCanvasPapy.js"></script>
             <script text="application/javascript">
                 initCircle();
             </script>
-			
+
             <div id="pointer">
-                &#8678;		
-				<!--<img src="pointer.jpg" style="width:304px;height:228px;" alt=""> 		-->		
+                &#8678;
+				<!--<img src="pointer.jpg" style="width:304px;height:228px;" alt=""> 		-->
 				</div>
                     <div id="choice" width="60" height="20" style="background-color: gray; border: thick solid black; border-color: red; border-size:6px">Take it for a spin!</div>
                     <div id="spinit" class="button blink" width="30" height="15" style="cursor: pointer; background-color: gray; border: thick solid black; border-color: red; border-size:6px" onclick="bgTurn('piechart');">Click to spin</div>
-					
-		
-					
+
+
+
     </center>
     <br></br>
 
@@ -49,35 +63,39 @@
         <p><input id="tb7" type="text" placeholder="S8" /></p>
         <p><input id="tb8" type="text" placeholder="S9" /></p>
         <p><input id="tb9" type="text" placeholder="S10" /></p>
-        
-        <p><button onclick="Load2()">Load Wheel</Button></p>
+
+        <p><button onclick="Load2()">Load Wheel</button></p>
     </div>
-    <p2 id="demo"></p2>
-	
+    <div id="demo"></div>
+
 <form id="yelpform">
 Your location:
 <br>
 (Zip Code or Name of a Place)
 <p>
-<input id="zip" maxlength="24" name="zip" title="Zip Code" value="">
+<input id="address" maxlength="50" name="address" placeholder="address, neighborhood, city, state or zip, optional country" title="Zip Code" value="">
 </p>
 <p> Term (example: Food, Restaurant) </p>
 <p>
-<input id="term" maxlength="24" name="term" title="term" value="">
+<input id="term" maxlength="24" name="term" placeholder="food, outing, restaurants, etc. " title="term" value="">
 </p>
 <p> Distance (miles): </p>
 <p>
-<input id="radius" maxlength="24" name="radius" size="5" title="radius" value="">
+<input id="radius" type="number" min="1" max="25" name="radius" placeholder="miles" size="5" title="radius" value="">
 </p>
 <p>
 <!--<input id="zipmit" class="button" value="Submit" type="submit" color="Red"> -->
-<button onclick="loadYelp()">Load Wheel</Button>
+<button type="button" class="fetch-by-address">Load Wheel</button>
 </p>
+
+<hr>
+<button type="button" class="fetch-by-current-location">Based on Current Location!</button>
+
 </form>
 
     <script>
         function WheelLoad() {
-            // var x = data[3]; 
+            // var x = data[3];
             //document.getElementById("demo").innerHTML = x;
             data = [];
 
@@ -142,22 +160,22 @@ Your location:
                 }
             }
 
-            angle = 360 / newData.length; 
-			
+            angle = 360 / newData.length;
+
 			var newAngle = 360;
 			var angleArray = new Array();
 			for (var sd = 0; sd < newData.length; sd++) {
-			
+
 			newAngle = newAngle - angle;
 			angleArray.push(newAngle);
 			}
-			
+
 			for (var d = 0; d < newData.length; d++) {
-		
+
 		newAngle = newAngle + angle;
 		data.push([angle, newData[d], angleArray[d]])
-		
-		
+
+
 		}
 
             canvas = document.getElementById("piechart");
@@ -171,17 +189,17 @@ Your location:
 
 
         }
-		
-		
-		
+
+
+
 	function play(){
        var audio = document.getElementById("audio");
        audio.play();
                  }
-		
-		
+
+
     </script>
-	
+
 	<div type="button" value="PLAY"  onclick="play()">
 	<audio id="audio" src="Spinning _Wheel_Sound.mp3" ></audio>
     <!--<script type= >
