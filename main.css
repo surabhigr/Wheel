@@ -161,9 +161,10 @@ body{
 
         #choice {
             background-color: rgba(128, 128, 128, 0.61) !important;
-            font: 50px arial, sans-serif;
+            font: 50px Montserrat, sans-serif;
             text-align: center;
             margin-top: 20px;
+            border-radius: 10px;
         }
 
         #spinit {
@@ -256,4 +257,48 @@ svg {
 
 @keyframes stroke-offset{
 	100% {stroke-dashoffset: -35%;}
+}
+
+
+
+/* CSS for auto-complete */
+#locationField, #controls {
+        position: relative;
+        width: 480px;
+      }
+      /*
+#autocomplete {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 99%;
+}
+*/
+.label {
+  text-align: right;
+  font-weight: bold;
+  width: 100px;
+  color: #303030;
+}
+#address {
+  border: 1px solid #000090;
+  background-color: #f0f0ff;
+  width: 480px;
+  padding-right: 2px;
+}
+#address td {
+  font-size: 10pt;
+}
+.field {
+  width: 99%;
+}
+.slimField {
+  width: 80px;
+}
+.wideField {
+  width: 200px;
+}
+#locationField {
+  height: 20px;
+  margin-bottom: 2px;
 }
