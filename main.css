@@ -1,0 +1,180 @@
+
+        <!--
+        /* @group Blink */
+        
+        .blink {
+            -webkit-animation: blink .75s linear infinite;
+            -moz-animation: blink .75s linear infinite;
+            -ms-animation: blink .75s linear infinite;
+            -o-animation: blink .75s linear infinite;
+            animation: blink .75s linear infinite;
+        }
+        
+        @-webkit-keyframes blink {
+            0% {
+                opacity: 1;
+            }
+            50% {
+                opacity: 1;
+            }
+            50.01% {
+                opacity: 0;
+            }
+            100% {
+                opacity: 0;
+            }
+        }
+        
+        @-moz-keyframes blink {
+            0% {
+                opacity: 1;
+            }
+            50% {
+                opacity: 1;
+            }
+            50.01% {
+                opacity: 0;
+            }
+            100% {
+                opacity: 0;
+            }
+        }
+        
+        @-ms-keyframes blink {
+            0% {
+                opacity: 1;
+            }
+            50% {
+                opacity: 1;
+            }
+            50.01% {
+                opacity: 0;
+            }
+            100% {
+                opacity: 0;
+            }
+        }
+        
+        @-o-keyframes blink {
+            0% {
+                opacity: 1;
+            }
+            50% {
+                opacity: 1;
+            }
+            50.01% {
+                opacity: 0;
+            }
+            100% {
+                opacity: 0;
+            }
+        }
+        
+        @keyframes blink {
+            0% {
+                opacity: 1;
+            }
+            50% {
+                opacity: 1;
+            }
+            50.01% {
+                opacity: 0;
+            }
+            100% {
+                opacity: 0;
+            }
+        }
+        /* @end */
+        
+        --> 
+
+
+        body {
+            margin: 50px;
+            padding: 50px;
+        }
+        
+        #spinner {
+            position: relative;
+            top: 5px;
+            left: 5px;
+            /* background-color: red; */
+            max-width: 500px;
+            width: 500px;
+            height: 500px;
+            z-index: 0;
+        }
+        
+        #pointer {
+            position: absolute;
+            top: 160px;
+            right: 2px;
+            background-color: red;
+            z-index: -2;
+            font: 50px arial, sans-serif;
+            text-align: left;
+        }
+        
+        #piechart {
+            display: block;
+            margin: auto;
+            position: relative;
+            max-width: 400px;
+            z-index: -1;
+        }
+		
+		 #yelpform {
+            display: block;
+            margin: auto;
+            position: absolute;
+            top: 80px;
+			left: 60px;
+			align: center;
+
+    border: 1px solid gray;
+    border-radius: 10px;
+    padding: 10px 10px 10px 10px;
+    background: rgba(128, 128, 128, 0.27);
+
+
+        }
+        
+		#mannualLoad {
+            display: block;
+            margin: auto;
+            position: absolute;
+            top: 80px;
+			right: 50px;
+			align: center;
+
+        }
+		
+        #choice {
+            background-color: gray;
+            font: 50px arial, sans-serif;
+            text-align: center
+        }
+        
+        #spinit {
+            background-color: gray;
+            font: 50px arial, sans-serif;
+            text-align: center
+        }
+
+
+
+.debug{
+	display: block;
+	position: absolute;
+	top: 1px;
+	left: 1px;
+	background: rgba(128, 128, 128, 0.27);
+	color: white;
+	border: 1px solid gray;
+	border-radius: 10px;
+	padding: 10px 10px 10px 10px;
+	font-size: 21px;
+	font-family: Verdana;
+}
+
+
