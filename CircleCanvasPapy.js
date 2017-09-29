@@ -1,4 +1,3 @@
-
 var data=new Array();
 var angle=0;
 /* Every data point should have a color */
@@ -202,3 +201,70 @@ function bgTurn(element) {
 		//
 	}
 }
+
+
+
+
+
+
+$(document).ready(function(){
+    $(".fetch").click(function(){
+     
+     var term = "pizza";
+    
+    // CA Lat/Long
+    var latitude =  '37.786882';    
+  	var longitude =  '-122.399972';
+    
+    // Detect User's current location
+    if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(showPosition);
+    } else {
+        alert("Geolocation is not supported by this browser.");
+    } 
+    
+
+ var _flag = 0;
+
+   // Show Position and make AJAX request to API Proxy
+function showPosition(position) {
+    latitude = position.coords.latitude;
+    longitude = position.coords.longitude; 
+    var api_url = 'https://surabhi.0x10.info/yelp.php?url=' + encodeURIComponent("https://api.yelp.com/v3/businesses/search?term=" + term + "&latitude=" + latitude + "&longitude=" + longitude);
+     
+    if(_flag == 1) 
+    	return;
+    else
+    	_flag = 1;
+
+
+// alert(api_url);
+
+         $.ajax({
+                  beforeSend: function(request) {
+                      request.setRequestHeader("Authorization", "Bearer dummy");
+                  },
+                  dataType: "json",
+                  url: api_url,
+                  success: function(data) {
+                      //Your code 
+                      // alert(JSON.stringify(data));
+                      // console.log(JSON.stringify(data));
+                      // alert(data.total);
+                      var p = data.businesses;
+						for (var key in p) {
+							if (p.hasOwnProperty(key)) {
+								console.log(key + " -> " + p[key].name);
+								
+								if(key<10)
+									$("#tb" + key).val(p[key].name);
+
+							}
+						}
+						Load2();
+                  }
+              });
+		}  
+    });
+}); 
+
