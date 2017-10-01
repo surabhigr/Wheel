@@ -10,7 +10,7 @@ $(document).ready(function(){
 
     // Show loader GIF
     $(".loading").show();
-   
+
 
     var term 		= $("#term").val();
 		var radius	= $("#radius").val();
@@ -73,6 +73,28 @@ function showPosition(position) {
 // Fetch details based on term (str), location (str), radius (int)
 $(document).ready(function(){
 
+
+  // iPad Hack, as we're not pro in getting a responsive design in less time
+  var isiPad = navigator.userAgent.match(/iPad/i) != null;
+  if(isiPad)
+  {
+    document.getElementById("mannualLoad").style.right = "-40px";
+
+    document.getElementById("piechart").style.height = "270px";
+    document.getElementById("piechart").style.width = "270px";
+
+    document.getElementById("yelpform").style.left = "8px";
+
+    document.getElementById("pointer").style.height = "49px";
+    document.getElementById("pointer").style.right = "-150px";
+    document.getElementById("pointer").style.top = "-143px";
+
+
+    document.getElementById("choice").style.font = "34px Montserrat, sans-serif";
+    document.getElementById("choice").style.width = "300px";
+    document.getElementById("spinit").style.font = "34px Montserrat, sans-serif";
+    document.getElementById("spinit").style.width = "300px";
+  }
     // Click action on  Custom Address and Term (Load Wheel Button)
     $(".fetch-by-address").unbind("click").click(function(){
 
