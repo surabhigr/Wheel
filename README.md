@@ -6,13 +6,15 @@ Dynamic Spinning Wheel
 
 ## Frontend
 - HTML
+- Bootstrap
 - CSS
 - JavaScript
 - jQuery
 
 ## Backend
-- PHP / Node.js
-- Yelp API Wrapper
+- PHP / Node.js Wrapper (to serve CORs based Yelp API)
+- Yelp Search API  (to recommend places)
+- Google Places API (to auto-complete address)
 
 ## Misc
 - Cloudflare
