@@ -140,7 +140,7 @@ body{
             position: absolute;
             top: 80px;
             left: 60px; 
-            
+
             /*
             border: 1px solid gray;
             border-radius: 10px;
@@ -309,4 +309,14 @@ svg {
 
 .loading{
 
+}
+
+  hr {
+    border-top: 1px solid rgba(136, 135, 135, 0.62);
+    box-shadow: -1px 0px 7px grey;
+}
+
+
+button {
+font-size: 15px !important;
 }

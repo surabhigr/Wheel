@@ -67,7 +67,7 @@
 				<!--<img src="pointer.jpg" style="width:304px;height:228px;" alt=""> 		-->
 				</div>
                     <div id="choice" width="60" height="20" style="background-color: gray; border: thick solid black; border-color: red; border-size:6px">Take it for a spin!</div>
-                    <div id="spinit" class="button blink" width="30" height="15" style="cursor: pointer; background-color: gray; border: thick solid black; border-color: red; border-size:6px" onclick="bgTurn('piechart');">Click to spin</div>
+                    <div id="spinit" class="button blink" width="30" height="15" style="cursor: pointer; background-color: gray; border: thick solid black; border-color: red; border-size:6px" onclick="bgTurn('piechart');"> Click to spin</div>
 
               
 
@@ -95,7 +95,7 @@
         <p><input id="tb8" type="text" placeholder="S9" /></p>
         <p><input id="tb9" type="text" placeholder="S10" /></p>
 
-        <p><button class="btn btn-danger" type="button" onclick="Load2()">Load Wheel</button></p>
+        <p><button class="btn btn-danger" type="button" onclick="Load2()"><span class="glyphicon glyphicon-dashboard" aria-hidden="true"></span> Load Wheel</button></p>
     </div>
 
   </div>
@@ -107,32 +107,45 @@
 <div  id="yelpform" class="panel panel-primary">
   <div class="panel-body">
       <p style="color:#FF5733"> <b>
-      Recommendation: Let me help out here</b></p>
+      Recommendation: Let me help you out here</b></p>
   </div>
   <div class="panel-footer"><!-- content -->
 
-<form id="" >
-Your location: (address)
-<p>
+<form>
 
 
-<input type="text" id="autocomplete" maxlength="70" name="address" placeholder="address: i.e. Indianapolis, IN, USA" title="Zip Code" value="">
-</p>
-<p> Term (example: Food, Restaurant) </p>
-<p>
-<input id="term" maxlength="24" name="term" placeholder="food, outing, restaurants, etc. " title="term" value="">
-</p>
-<p> Distance (miles): </p>
-<p>
-<input id="radius" type="number" min="1" max="25" name="radius" placeholder="miles" size="5" title="radius" value="">
-</p>
+Address:
+<div class="input-group input-group-sm" style="width: 300px;">
+  <span class="input-group-addon" id="sizing-addon3">
+    <span class="glyphicon glyphicon-home" aria-hidden="true"></span>
+  </span> 
+  <input type="text" id="autocomplete" class="form-control" maxlength="70" aria-describedby="sizing-addon3" name="address" placeholder="address: i.e. Indianapolis, IN, USA" title="Zip Code" value="">
+</div></br>
+
+Term (example: Food, Restaurant)
+ <div class="input-group input-group-sm" style="width: 300px;">
+    <span class="input-group-addon" id="sizing-addon3">
+      <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
+    </span> 
+
+    <input id="term" class="form-control" maxlength="24" aria-describedby="sizing-addon3" name="term" placeholder="food, outing, restaurants, etc. " title="term" value="">
+</div></br>
+
+Distance (miles):
+ <div class="input-group input-group-sm" style="width: 300px;">
+    <span class="input-group-addon" id="sizing-addon3">
+      <span class="glyphicon glyphicon-road" aria-hidden="true"></span>
+    </span> 
+    <input id="radius" class="form-control"  aria-describedby="sizing-addon3" type="number" min="1" max="25" name="radius" placeholder="miles" size="5" title="radius" value="">
+</div></br>
+
 <p>
 <!--<input id="zipmit" class="button" value="Submit" type="submit" color="Red"> -->
-<button type="button" class="btn btn-info fetch-by-address">Load Wheel</button>
+<button type="button" class="btn btn-info fetch-by-address"><span class="glyphicon glyphicon-dashboard" aria-hidden="true"></span> Load Wheel</button>
 </p>
 
 <hr>
-<button type="button" class="btn btn-primary fetch-by-current-location">Based on Current Location!</button>
+<button type="button" class="btn btn-primary fetch-by-current-location"><span class="glyphicon glyphicon-map-marker" aria-hidden="true"></span> Based on Current Location!</button>
 
 
       <div class="loading">
