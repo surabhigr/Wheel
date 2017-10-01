@@ -9,6 +9,13 @@
   <meta http-equiv="expires" content="Tue, 01 Jan 1980 1:00:00 GMT" />
   <meta http-equiv="pragma" content="no-cache" />
 
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+<!-- Optional theme -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script src="CircleCanvasPapy.js"></script>
@@ -26,12 +33,14 @@
 
 
 
+
     <center>
+
 
 <div class="title">
   <svg viewBox="0 0 1500 300">
 	<symbol id="s-text">
-		<text text-anchor="middle" x="50%" y="80%">Spinning Wheel</text>
+		<text text-anchor="middle" x="50%" y="80%">Wheel of Fun - Technovation</text>
 	</symbol>
 
 	<g class = "g-ants">
@@ -53,19 +62,28 @@
             </script>
 
             <div id="pointer">
-                &#8678;
+                
+                <img src="pointer.png">
 				<!--<img src="pointer.jpg" style="width:304px;height:228px;" alt=""> 		-->
 				</div>
                     <div id="choice" width="60" height="20" style="background-color: gray; border: thick solid black; border-color: red; border-size:6px">Take it for a spin!</div>
                     <div id="spinit" class="button blink" width="30" height="15" style="cursor: pointer; background-color: gray; border: thick solid black; border-color: red; border-size:6px" onclick="bgTurn('piechart');">Click to spin</div>
 
+              
+
+
 
 
     </center>
     <br></br>
+<div id="mannualLoad" class="panel panel-primary">
+  <div class="panel-body">
+      <p style="color:#FF5733"> <b>Enter customized wheel option below </b></p>
+  </div>
+  <div class="panel-footer"><!-- content -->
 
-    <div id="mannualLoad" contenteditable="true">
-	<p style="color:#FF5733"> <b>Enter customized wheel option below </b></p>
+   <div id="_mannualLoad" contenteditable="true">
+
         <p><input id="tb0" type="text" placeholder="S1"></p>
         <p><input id="tb1" type="text" placeholder="S2" /></p>
         <p><input id="tb2" type="text" placeholder="S3" /></p>
@@ -77,11 +95,17 @@
         <p><input id="tb8" type="text" placeholder="S9" /></p>
         <p><input id="tb9" type="text" placeholder="S10" /></p>
 
-        <p><button type="button" onclick="Load2()">Load Wheel</button></p>
+        <p><button class="btn btn-danger" type="button" onclick="Load2()">Load Wheel</button></p>
     </div>
+
+  </div>
+</div>
+
+   
+
     <div id="demo"></div>
 
-<form id="yelpform">
+<form id="yelpform" >
 Your location:
 <br>
 (Address)
@@ -100,19 +124,28 @@ Your location:
 </p>
 <p>
 <!--<input id="zipmit" class="button" value="Submit" type="submit" color="Red"> -->
-<button type="button" class="fetch-by-address">Load Wheel</button>
+<button type="button" class="btn btn-info fetch-by-address">Load Wheel</button>
 </p>
 
 <hr>
-<button type="button" class="fetch-by-current-location">Based on Current Location!</button>
+<button type="button" class="btn btn-primary fetch-by-current-location">Based on Current Location!</button>
 
+
+      <div class="loading">
+        <hr>
+        <img style="width:25%;" src="loading.gif">
+      </div>
 </form>
 
 
 
 	<div type="button" value="PLAY"  onclick="play()">
-	<audio id="audio" src="Spinning _Wheel_Sound.mp3" ></audio>
+	<audio id="audio" src="Spinning%20_Wheel_Sound.mp3" ></audio>
+
+
     <!--<script type= >
+
+
 
 function WheelLoad(){
 

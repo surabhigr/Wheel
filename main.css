@@ -108,19 +108,22 @@ body{
             left: 5px;
             /* background-color: red; */
             max-width: 500px;
-            width: 500px;
+            width: 400px;
             height: 500px;
             z-index: 0;
         }
 
         #pointer {
-            position: absolute;
-            top: 160px;
-            right: 2px;
-            background-color: red;
-            z-index: -2;
-            font: 50px arial, sans-serif;
-            text-align: left;
+            position: relative;
+                width: 48px;
+                height: 49px;
+                right:-219px;
+                top: -213px;
+                size: 300px;
+            
+        }
+        #pointer > img{
+          width: 48px;
         }
 
         #piechart {
@@ -152,11 +155,12 @@ body{
           position: absolute;
           top: 80px;
           right: 50px;
-          align: center;
+          /*
           border: 1px solid gray;
           border-radius: 10px;
           padding: 10px 10px 10px 10px;
           background: rgba(27, 26, 26, 0.22);
+          */
         }
 
         #choice {
@@ -210,11 +214,11 @@ input{
   position: relative;
   text-align: center;
   top: 0;
-  margin-top: -116px;
+  margin-top: -147px;
 }
 svg {
     display: block;
-    font: 12.5em 'Montserrat';
+    font: 7.5em 'Montserrat';
     font-weight: bold;
     width: 960px;
     height: 130px;
@@ -301,4 +305,8 @@ svg {
 #locationField {
   height: 20px;
   margin-bottom: 2px;
+}
+
+.loading{
+
 }

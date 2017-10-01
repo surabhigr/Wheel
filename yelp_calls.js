@@ -2,8 +2,10 @@
 
 // Get details based on latitude (decimal), longitude (decimal)
 $(document).ready(function(){
+  $(".loading").hide();
     $(".fetch-by-current-location").click(function(){
 
+    $(".loading").show();
     var term 		= $("#term").val();
 		var radius	= $("#radius").val();
 
@@ -11,7 +13,7 @@ $(document).ready(function(){
     var latitude =  '37.786882';
   	var longitude =  '-122.399972';
 		if(radius == "") radius = 7;
-		if(term == "") term = "pizza";
+		if(term == "") term = "restaurant";
 
 
     // Detect User's current location
@@ -26,6 +28,7 @@ $(document).ready(function(){
 
    // Show Position and make AJAX request to API Proxy
 function showPosition(position) {
+
     latitude = position.coords.latitude;
     longitude = position.coords.longitude;
     var api_url = 'https://surabhi.0x10.info/yelp.php?url=' + encodeURIComponent("https://api.yelp.com/v3/businesses/search?term=" + term + "&latitude=" + latitude + "&longitude=" + longitude);
@@ -57,6 +60,7 @@ function showPosition(position) {
 											}
 											// AutoLoad Wheel
 											Load2();
+                      $(".loading").hide();
                   }
               });
 						}
@@ -70,13 +74,15 @@ function showPosition(position) {
 $(document).ready(function(){
     $(".fetch-by-address").unbind("click").click(function(){
 
+      $(".loading").show();
+
 		var location = $("#autocomplete").val();
 		var term 		= $("#term").val();
 		var radius	= $("#radius").val();
 		var _flag = 0;
 
 		if(radius == "") radius = 2;
-		if(term == "") term = "pizza";
+		if(term == "") term = "restaurant";
 		if(location == "") location = "Indianapolis, IN";
 
     var api_url = 'https://surabhi.0x10.info/yelp.php?url=' + encodeURIComponent("https://api.yelp.com/v3/businesses/search?term=" + term + "&location=" + location + "&radius=" + radius);
@@ -105,6 +111,7 @@ $(document).ready(function(){
 											}
 											// AutoLoad Wheel
 											Load2();
+                      $(".loading").hide();
                   }
         });
     });

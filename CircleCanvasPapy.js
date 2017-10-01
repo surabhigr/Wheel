@@ -2,15 +2,15 @@ var data=new Array();
 var angle=0;
 /* Every data point should have a color */
 var colors = [
-	"#F79F81",
+	"#EAE56F",
+	"#89F26E",
+	"#7DE6EF",
+	"#E7706F",
 	"#F5FBEF",
-	"#F79F81",
-	"#F5FBEF",
-	"#F79F81",
-	"#F5FBEF",
-	"#F79F81",
-	"#F5FBEF",
-	"#F79F81",
+	"#EAE56F",
+	"#89F26E",
+	"#7DE6EF",
+	"#E7706F",
 	"#F5FBEF"
 ];
 /* Include global variables file */
