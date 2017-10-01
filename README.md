@@ -16,6 +16,8 @@ Dynamic Spinning Wheel
 
 ## Misc
 - Cloudflare
+- AWS AMI / EC2 / t2.micro
+- nginx
 
 
 

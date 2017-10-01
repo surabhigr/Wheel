@@ -139,14 +139,14 @@ body{
             margin: auto;
             position: absolute;
             top: 80px;
-            left: 60px;
-            align: center;
-
+            left: 60px; 
+            
+            /*
             border: 1px solid gray;
             border-radius: 10px;
             padding: 10px 10px 10px 10px;
             background: rgba(27, 26, 26, 0.22);
-
+            */
         }
 
 		#mannualLoad {

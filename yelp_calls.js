@@ -2,10 +2,16 @@
 
 // Get details based on latitude (decimal), longitude (decimal)
 $(document).ready(function(){
+  // Hide ajax loading GIF animation by default once the entire page loads.
   $(".loading").hide();
-    $(".fetch-by-current-location").click(function(){
 
+    // Execute AJAX call when there's a click action on "Location" button.
+    $(".fetch-by-current-location").unbind("click").click(function(){
+
+    // Show loader GIF
     $(".loading").show();
+   
+
     var term 		= $("#term").val();
 		var radius	= $("#radius").val();
 
@@ -24,19 +30,12 @@ $(document).ready(function(){
     }
 
 
- var _flag = 0;
-
    // Show Position and make AJAX request to API Proxy
 function showPosition(position) {
 
     latitude = position.coords.latitude;
     longitude = position.coords.longitude;
     var api_url = 'https://surabhi.0x10.info/yelp.php?url=' + encodeURIComponent("https://api.yelp.com/v3/businesses/search?term=" + term + "&latitude=" + latitude + "&longitude=" + longitude);
-
-    if(_flag == 1)
-    	return;
-    else
-    	_flag = 1;
 
          $.ajax({
                   beforeSend: function(request) {
@@ -45,21 +44,22 @@ function showPosition(position) {
                   dataType: "json",
                   url: api_url,
                   success: function(data) {
-                      //Your code
+                      // Test Code
                       // alert(JSON.stringify(data));
                       // console.log(JSON.stringify(data));
                       // alert(data.total);
                       var p = data.businesses;
+                      // Process each of the fetched entries in object
 											for (var key in p) {
 												if (p.hasOwnProperty(key)) {
 													console.log(key + " -> " + p[key].name);
 													if(key<10)
 														$("#tb" + key).val(p[key].name);
-
 												}
 											}
 											// AutoLoad Wheel
 											Load2();
+                      // Hide Loading GIF
                       $(".loading").hide();
                   }
               });
@@ -72,6 +72,8 @@ function showPosition(position) {
 
 // Fetch details based on term (str), location (str), radius (int)
 $(document).ready(function(){
+
+    // Click action on  Custom Address and Term (Load Wheel Button)
     $(".fetch-by-address").unbind("click").click(function(){
 
       $(".loading").show();
