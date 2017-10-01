@@ -120,7 +120,7 @@ body{
                 right:-219px;
                 top: -213px;
                 size: 300px;
-            
+
         }
         #pointer > img{
           width: 48px;
@@ -139,7 +139,7 @@ body{
             margin: auto;
             position: absolute;
             top: 80px;
-            left: 60px; 
+            left: 60px;
 
             /*
             border: 1px solid gray;

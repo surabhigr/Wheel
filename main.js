@@ -34,18 +34,20 @@ export default StyleSheet.create({
         "top": 5,
         "left": 5,
         "maxWidth": 500,
-        "width": 500,
+        "width": 400,
         "height": 500,
         "zIndex": 0
     },
     "pointer": {
-        "position": "absolute",
-        "top": 160,
-        "right": 2,
-        "backgroundColor": "red",
-        "zIndex": -2,
-        "font": "50px arial, sans-serif",
-        "textAlign": "left"
+        "position": "relative",
+        "width": 48,
+        "height": 49,
+        "right": -219,
+        "top": -213,
+        "size": 300
+    },
+    "pointer > img": {
+        "width": 48
     },
     "piechart": {
         "display": "block",
@@ -65,15 +67,7 @@ export default StyleSheet.create({
         "marginLeft": "auto",
         "position": "absolute",
         "top": 80,
-        "left": 60,
-        "align": "center",
-        "border": "1px solid gray",
-        "borderRadius": 10,
-        "paddingTop": 10,
-        "paddingRight": 10,
-        "paddingBottom": 10,
-        "paddingLeft": 10,
-        "background": "rgba(27, 26, 26, 0.22)"
+        "left": 60
     },
     "mannualLoad": {
         "display": "block",
@@ -83,15 +77,7 @@ export default StyleSheet.create({
         "marginLeft": "auto",
         "position": "absolute",
         "top": 80,
-        "right": 50,
-        "align": "center",
-        "border": "1px solid gray",
-        "borderRadius": 10,
-        "paddingTop": 10,
-        "paddingRight": 10,
-        "paddingBottom": 10,
-        "paddingLeft": 10,
-        "background": "rgba(27, 26, 26, 0.22)"
+        "right": 50
     },
     "choice": {
         "backgroundColor": "rgba(128, 128, 128, 0.61) !important",
@@ -142,11 +128,11 @@ export default StyleSheet.create({
         "position": "relative",
         "textAlign": "center",
         "top": 0,
-        "marginTop": -116
+        "marginTop": -147
     },
     "svg": {
         "display": "block",
-        "font": "12.5em 'Montserrat'",
+        "font": "7.5em 'Montserrat'",
         "fontWeight": "bold",
         "width": 960,
         "height": 130,
@@ -216,5 +202,13 @@ export default StyleSheet.create({
     },
     "wideField": {
         "width": 200
+    },
+    "loading": {},
+    "hr": {
+        "borderTop": "1px solid rgba(136, 135, 135, 0.62)",
+        "boxShadow": "-1px 0px 7px grey"
+    },
+    "button": {
+        "fontSize": "15px !important"
     }
 });
