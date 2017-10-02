@@ -11,11 +11,11 @@ body{
         /* @group Blink */
 
         .blink {
-            -webkit-animation: blink .75s linear infinite;
-            -moz-animation: blink .75s linear infinite;
-            -ms-animation: blink .75s linear infinite;
-            -o-animation: blink .75s linear infinite;
-            animation: blink .75s linear infinite;
+            -webkit-animation: blink .95s linear infinite;
+            -moz-animation: blink .95s linear infinite;
+            -ms-animation: blink .95s linear infinite;
+            -o-animation: blink .95s linear infinite;
+            animation: blink .95s linear infinite;
         }
 
         @-webkit-keyframes blink {
@@ -228,10 +228,10 @@ svg {
 .text-copy {
     fill: none;
     stroke: white;
-    stroke-dasharray: 6% 29%;
+    stroke-dasharray: 60% 29%;
     stroke-width: 5px;
     stroke-dashoffset: 0%;
-    animation: stroke-offset 5.5s infinite linear;
+    animation: stroke-offset 8.5s infinite linear;
 }
 
 .text-copy:nth-child(1){
@@ -240,7 +240,7 @@ svg {
 }
 
 .text-copy:nth-child(2){
-	stroke: white;
+	stroke: gray;
 	animation-delay: -2s;
 }
 
