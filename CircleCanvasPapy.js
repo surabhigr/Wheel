@@ -142,8 +142,8 @@ function bgTurn(element) {
 	MIN=100;	// Minimum number of turns
 	TIMEOUT=10;	// Time out in milliseconds
 
-		var audio = document.getElementById("audio");
-       audio.play()
+		//var audio = document.getElementById("audio");
+       //audio.play()
 	/* Keep Track of Spins */
 	start=0;
 
@@ -165,8 +165,8 @@ function bgTurn(element) {
 	// The turns are between i and MAX
 		if((j++)==i){
 			clearInterval(id);
-			audio.pause()
-			audio.currentTime =0;
+			//audio.pause()
+			//audio.currentTime =0;
 		} else {
 		// This sets the rotation degrees
 		var func="rotate("+(start)+"deg)";
