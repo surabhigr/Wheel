@@ -138,12 +138,12 @@ function drawSegmentLabel(canvas, context, i) {
 
 /* Spin the circle */
 function bgTurn(element) {
-	MAX=780	// Maximum number of turns
-	MIN=0;	// Minimum number of turns
+	MAX=180	// Maximum number of turns
+	MIN=100;	// Minimum number of turns
 	TIMEOUT=10;	// Time out in milliseconds
 
-		var audio = document.getElementById("audio");
-       audio.play()
+		//var audio = document.getElementById("audio");
+       //audio.play()
 	/* Keep Track of Spins */
 	start=0;
 
@@ -151,7 +151,7 @@ function bgTurn(element) {
 	turn=10;
 
 	// Randomize how many turns
-	var i=Math.floor(Math.random()*(MAX-MIN));
+	var i=Math.floor((Math.random() * MAX) + MIN);
 	var j=0;
 	var k=0;
 	var l=0;
@@ -165,8 +165,8 @@ function bgTurn(element) {
 	// The turns are between i and MAX
 		if((j++)==i){
 			clearInterval(id);
-			audio.pause()
-			audio.currentTime =0;
+			//audio.pause()
+			//audio.currentTime =0;
 		} else {
 		// This sets the rotation degrees
 		var func="rotate("+(start)+"deg)";
@@ -189,15 +189,18 @@ function bgTurn(element) {
 		for(z=0;z<data.length;z++) {
 			if (l>data[z][2]) {
 				document.getElementById("choice").innerHTML=data[z][1];
+				document.getElementById("ending-audio").play();
 				break;
 			}
-
+			
 		}
-
+		
 		//if (z == (data.length -1)){
-		//		audio.pause()
-		//		audio.currentTime =0;
-		//	}
-		//
+		 	//audio.pause()
+			//audio.currentTime =0;
+			//document.getElementById("ending-audio").play();
+		//}
+		document.getElementById("ending-audio").currentTime=0
 	}
+	
 }
