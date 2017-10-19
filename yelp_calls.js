@@ -74,10 +74,13 @@ function showPosition(position) {
 $(document).ready(function(){
 
 
-  // iPad Hack, as we're not pro in getting a responsive design in less time
+  // iPad/iPhone/Android Hack, as we're not pro in getting a responsive design in less time
   var isiPad = navigator.userAgent.match(/iPad/i) != null;
-  if(isiPad)
-  {
+  var isiPhone = navigator.userAgent.match(/iPhone/i) != null;
+  var isAndroid = navigator.userAgent.match(/Android/i) != null;
+
+   if(isiPad || isiPhone || isAndroid)
+   {
     document.getElementById("mannualLoad").style.right = "-40px";
 
     document.getElementById("piechart").style.height = "270px";
